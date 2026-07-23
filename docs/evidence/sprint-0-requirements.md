@@ -71,16 +71,16 @@ Can users avoid mistakes, and recover easily if they make one? Does it follow th
 
 
 
-## NAME OF IMPLICATION 5
+## END USER
 
-Replace this text with a clear explanation of what the implication means.
+What are the specific needs your end user has
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+this implication is important because the design should be built based on the end user needs, not just what I think looks good, or else it wont be usable by my target demographic.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+Is it accessible on the devices your users are likely to have? Does it do what the user needs it to do?
 
 
