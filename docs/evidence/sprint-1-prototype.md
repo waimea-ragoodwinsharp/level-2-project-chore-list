@@ -7,7 +7,7 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 ### Specific Goals
 
-**Edit these goals as needed**
+
 
 - Design the database:
     - Tables
@@ -15,12 +15,12 @@ Develop a design for the database and a UI prototype that simulates the key func
     - Primary keys
     - Default / nullable values
     - Relationships (foreign keys)
-- Design the UI
+    - Design the UI
     - Key pages
     - User interactions and 'flow'
     - Page layouts / features
     - Colour palette
-    - Etc.
+    
 
 
 ## Initial Database Design
@@ -32,7 +32,7 @@ Replace this text with notes regarding the DB design.
 
 ### Required Data Input
 
-Replace this text with a description of what data will be input, and where / how it will be obtained.
+The user has to add a chore through the form, and they can see the chores and their details through the chore list.
 
 ### Required Data Output
 
