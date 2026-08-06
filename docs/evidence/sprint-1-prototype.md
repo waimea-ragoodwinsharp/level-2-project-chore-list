@@ -36,11 +36,11 @@ The user has to add a chore through the form, and they can see the chores and th
 
 ### Required Data Output
 
-Replace this text with a description of the outputs for the system - what types of data will be displayed?
+The chores: Name, person, priprity, completion time, and reset time. 
 
 ### Required Data Processing
 
-Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
+Gets added to a database. 
 
 
 ## UI 'Flow'
