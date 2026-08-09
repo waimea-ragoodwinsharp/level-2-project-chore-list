@@ -55,6 +55,8 @@ This Figma demo shows the initial design for the UI 'flow':
 
 Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
 
+**Note to self. Ask Mr.Copley about penpot shtuff and drawsql shtuff**
+
 ### Changes / Improvements
 
 Replace this text with notes any improvements you made as a result of the testing.
