@@ -27,8 +27,7 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 Replace this text with notes regarding the DB design.
 
-![DB Design](screenshots/placeholder.png)
-
+![DB Design](screenshots/db.png)
 
 ### Required Data Input
 
@@ -36,7 +35,8 @@ The user has to add a chore through the form, and they can see the chores and th
 
 ### Required Data Output
 
-The chores: Name, person, priprity, completion time, and reset time. 
+The chores: Name, person, priprity, due, and repeat. 
+The person: Name
 
 ### Required Data Processing
 
@@ -47,15 +47,13 @@ Gets added to a database.
 
 The first stage of prototyping was to explore how the UI might 'flow' between states, based on the required functionality.
 
-This Figma demo shows the initial design for the UI 'flow':
+This Penpot demo shows the initial design for the UI 'flow':
 
-**FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT**
+![Version 1 of user flow](screenshots/version1flow.png)
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
-
-**Note to self. Ask Mr.Copley about penpot shtuff and drawsql shtuff**
+I made sure that my buttons worked properly and when they didn't I just fixed them 
 
 ### Changes / Improvements
 
