@@ -50,6 +50,7 @@ The first stage of prototyping was to explore how the UI might 'flow' between st
 This Penpot demo shows the initial design for the UI 'flow':
 
 ![Version 1 of user flow](screenshots/version1flow.png)
+https://design.penpot.app/#/view?file-id=ddb7145f-a1be-80bb-8008-6c68aa1986cd&page-id=ddb7145f-a1be-80bb-8008-6c68aa1986ce&section=interactions&index=0&share-id=3be9e5e1-190f-8090-8008-76eff011ee70
 
 ### Testing
 
@@ -57,9 +58,9 @@ I made sure that my buttons worked properly and when they didn't I just fixed th
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I improved the order of the flow chart.
 
-*IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+![improved flow chart](screenshots/redflow.png)
 
 
 ## Initial UI Prototype
