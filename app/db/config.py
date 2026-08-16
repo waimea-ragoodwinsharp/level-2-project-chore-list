@@ -54,8 +54,8 @@ class ChoreTable:
         INSERT INTO note (name, person_id, priority, due, repeat, done)
         VALUES
             ("Vacuum",      "4", "3", "7/11/2026", "No repeat", "1"),
-            ("Clean Chickens",  "5", "2", "12/12/2026", "Repeat every day", "0"),
-            ("cook dinner",  "2", "2", "30/3/2026", "repeat daily", "0")
+            ("Clean Chickens",  "5", "2", "12/12/2026", "Repeat daily", "0"),
+            ("cook dinner",  "2", "2", "30/3/2026", "Repeat daily", "0")
            
     """
 
