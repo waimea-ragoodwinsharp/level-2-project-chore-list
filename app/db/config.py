@@ -14,30 +14,76 @@
 #     SCHEMA    = "CREATE TABLE name (...)"
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
+class PeopleTable:
 
-class NoteTable:
-
-    NAME = "note"
+    NAME = "person"
 
     SCHEMA = """
-        CREATE TABLE note (
+        CREATE TABLE person (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            title   TEXT NOT NULL,
-            body    TEXT,
-            pinned  INTEGER DEFAULT 0,
-            created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            name   TEXT NOT NULL,
+            
         )
     """
-
-    SEED_DATA = """
-        INSERT INTO note (title, pinned, body)
+ SEED_DATA = """
+        INSERT INTO note (id, name)
         VALUES
-            ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
-            ("Shopping List", 0, "Milk\nBread\nEggs\nCheese"),
-            ("Meeting Notes", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
-            ("Recipe: Pasta", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy!"),
-            ("Important!",    1, "Remember to backup your database regularly.")
+            ("4",  "Rose"),
+            ("5",  "James"),
+            ("2",  "Jeremy")
+           
     """
+
+
+class ChoreTable:
+
+    NAME = "chores"
+
+    SCHEMA = """
+        CREATE TABLE chores (
+            id      INTEGER PRIMARY KEY AUTOINCREMENT,
+            name   TEXT NOT NULL,
+            person_id    TEXT,
+            priotiy  INTEGER DEFAULT 0,
+            due TEXT,
+            repeat BOOLEAN,
+            done BOOLEAN
+        )
+    """
+ SEED_DATA = """
+        INSERT INTO note (name, person_id, priority, due, repeat, done)
+        VALUES
+            ("Vacuum",      "4", "3", "7/11/2026", "No repeat", "1"),
+            ("Clean Chickens",  "5", "2", "12/12/2026", "Repeat every day", "0"),
+            ("cook dinner",  "2", "2", "30/3/2026", "repeat daily", "0")
+           
+    """
+
+
+
+#class NoteTable:
+
+#    NAME = "note"
+
+ #   SCHEMA = """
+ #       CREATE TABLE note (
+ #           id      INTEGER PRIMARY KEY AUTOINCREMENT,
+ #           title   TEXT NOT NULL,
+ #           body    TEXT,
+ #           pinned  INTEGER DEFAULT 0,
+#            created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+#        )
+ #   """
+#
+ #   SEED_DATA = """
+#        INSERT INTO note (title, pinned, body)
+ #       VALUES
+ #           ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
+#            ("Shopping List", 0, "Milk\nBread\nEggs\nCheese"),
+ #           ("Meeting Notes", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
+#            ("Recipe: Pasta", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy!"),
+ #           ("Important!",    1, "Remember to backup your database regularly.")
+#    """
 
 # Add more table classes here...
 
@@ -49,9 +95,9 @@ class NoteTable:
 # Register all of your tables by adding them to the TABLES list here:
 #
 # TABLES = [
-#     Table1Name,
-#     Table2Name,
-#     etc.
+#     PeopleTable,
+#     ChoreTable
+#    
 # ]
 #
 # Note: The table order is important - Create the tables that have

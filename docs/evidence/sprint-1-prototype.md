@@ -58,7 +58,7 @@ I made sure that my buttons worked properly and when they didn't I just fixed th
 
 ### Changes / Improvements
 
-I improved the order of the flow chart.
+I improved the order of the flow chart and end user asked for pastel colours.
 
 ![improved flow chart](screenshots/redflow.png)
 
