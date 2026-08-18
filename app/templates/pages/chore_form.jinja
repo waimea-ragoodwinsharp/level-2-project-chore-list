@@ -1,0 +1,29 @@
+{% extends 'pages/_base.jinja' %}
+
+{% block content %}
+
+    <h2>Add a chore</h2>
+
+    <form method="post" action="/chore/new">
+        <label>
+
+
+            name
+            <input type="text" name="name" required>
+        
+        </label>
+
+        <label>
+
+            person
+            <input type="int" person="person" required>
+
+        </label>
+         <label>
+
+            priority
+            <input type="int" priority="priority" required>
+
+        </label>
+    
+    </form>

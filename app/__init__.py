@@ -1,6 +1,6 @@
 #===========================================================
-# PROJECT NAME HERE
-# By YOUR NAME HERE
+# Choresorter
+# By Rose Goodwin-Sharp
 #===========================================================
 
 from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response
@@ -21,18 +21,18 @@ app = Flask(__name__)
 #===========================================================
 
 #-----------------------------------------------------------
-# Home page - Show all notes
+# Home page - Show all chores
 #-----------------------------------------------------------
 @app.get("/")
-def show_notes():
+def show_chores():
     with connect_db() as db:
         sql = """
-            SELECT id, title, body, pinned, created
-            FROM note
+            SELECT id, name 
+            FROM chore
             ORDER BY pinned DESC, created DESC
         """
         params = ()
-        notes = db.execute(sql, params).fetchall()
+        chores = db.execute(sql, params).fetchall()
 
         flash("Test message")
         flash("Test SUCCESS message", "success")
@@ -40,7 +40,31 @@ def show_notes():
         flash("Test WARNING message", "warning")
         flash("Test ERROR message", "error")
 
-        return render_template("pages/note_list.jinja", notes=notes)
+        return render_template("pages/chore_list.jinja", chores=chores)
+
+
+#-----------------------------------------------------------
+# details page - Show all chores in detail
+#-----------------------------------------------------------
+@app.get("/")
+def show_choresdetails():
+    with connect_db() as db:
+        sql = """
+            SELECT id, name, person_id, priority, due, repeat, done
+            FROM chore
+            ORDER BY pinned DESC, created DESC
+        """
+        params = ()
+        chores = db.execute(sql, params).fetchall()
+
+        flash("Test message")
+        flash("Test SUCCESS message", "success")
+        flash("Test INFO message", "info")
+        flash("Test WARNING message", "warning")
+        flash("Test ERROR message", "error")
+
+        return render_template("pages/chore_list.jinja", chores=chores)
+
 
 
 #===========================================================

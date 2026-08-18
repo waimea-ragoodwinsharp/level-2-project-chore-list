@@ -1,0 +1,40 @@
+{#=====================================================
+  Home page
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Chores</h2>
+
+    <section id="chores">
+
+        {% for chore in chores %}
+
+            <div class="chore {{ 'pinned' if chore.pinned }}">
+
+                <header>
+                    <h3>{{ chore.title }}</h3>
+                    {{ "📌" if chore.pinned }}
+                </header>
+
+                <p>{{ chore.body | paragraphs }}</p>
+
+                <footer>
+                    Created on {{ chore.created | local | format }}
+                </footer>
+
+            </div>
+
+        {% else %}
+
+            <p>No Chores!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
+
