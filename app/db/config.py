@@ -105,7 +105,7 @@ class ChoreTable:
 #----------------------------------------------------------------------------
 
 TABLES = [
-    NoteTable,
-    # Add more tables here...
+    PeopleTable,
+    ChoreTable
 ]
 
