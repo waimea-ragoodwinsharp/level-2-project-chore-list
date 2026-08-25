@@ -50,7 +50,7 @@ def show_chores():
 def show_choresdetails():
     with connect_db() as db:
         sql = """
-            SELECT id, name, person_id, priority, due, repeat, done
+            SELECT id, name, person_id, priority, done
             FROM chore
             ORDER BY pinned DESC, created DESC
         """

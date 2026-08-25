@@ -20,7 +20,7 @@ Implement the database, populated with test data. Create queries that retrieve t
     - Etc.
 
 
-## Testing FEATURE NAME HERE
+## Testing simplicity
 
 I am testing in DRAWSQL to see if a repeat and due date part of the database would be doable
 
@@ -33,15 +33,15 @@ I made it much simpler and doable
 
 ![Retry of database](screenshots/renameofsql.png)
 
-## Testing FEATURE NAME HERE
+## Testing if my database looks right
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am running the data on the terminal
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![db ran in terminal](screenshots/terminaldb.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I fixed up some spacing issues. 
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
