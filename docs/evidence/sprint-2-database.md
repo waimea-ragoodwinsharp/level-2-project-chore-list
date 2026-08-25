@@ -22,18 +22,16 @@ Implement the database, populated with test data. Create queries that retrieve t
 
 ## Testing FEATURE NAME HERE
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am testing in DRAWSQL to see if a repeat and due date part of the database would be doable
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-![Placeholder](screenshots/placeholder.png)
+![original of database](screenshots/db.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I made it much simpler and doable
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+![Retry of database](screenshots/renameofsql.png)
 
 ## Testing FEATURE NAME HERE
 

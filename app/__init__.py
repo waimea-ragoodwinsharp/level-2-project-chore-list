@@ -46,7 +46,7 @@ def show_chores():
 #-----------------------------------------------------------
 # details page - Show all chores in detail
 #-----------------------------------------------------------
-@app.get("/")
+@app.get("/choredetails")
 def show_choresdetails():
     with connect_db() as db:
         sql = """

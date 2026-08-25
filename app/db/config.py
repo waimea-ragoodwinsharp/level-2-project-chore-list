@@ -14,26 +14,29 @@
 #     SCHEMA    = "CREATE TABLE name (...)"
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
+
+#---People-----------------------------
 class PeopleTable:
+
 
     NAME = "person"
 
     SCHEMA = """
         CREATE TABLE person (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            name   TEXT NOT NULL,
+            name   TEXT NOT NULL
             
         )
     """
- SEED_DATA = """
-        INSERT INTO note (id, name)
+    SEED_DATA = """
+        INSERT INTO person (name)
         VALUES
-            ("4",  "Rose"),
-            ("5",  "James"),
-            ("2",  "Jeremy")
+            ("Rose"),
+            ("James"),
+            ("Jeremy")
            
     """
-
+#---Chores-----------------------------
 
 class ChoreTable:
 
@@ -41,21 +44,23 @@ class ChoreTable:
 
     SCHEMA = """
         CREATE TABLE chores (
-            id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            name   TEXT NOT NULL,
-            person_id    TEXT,
-            priotiy  INTEGER DEFAULT 0,
-            due TEXT,
-            repeat BOOLEAN,
-            done BOOLEAN
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            name      TEXT NOT NULL,
+            person_id INTEGER,
+            priority  INTEGER DEFAULT 0,
+            due       TEXT,
+            repeat    INTEGER DEFAULT 0,
+            done      INTEGER DEFAULT 0,
+
+            FOREIGN KEY(person_id) REFERENCES person(id)
         )
     """
- SEED_DATA = """
-        INSERT INTO note (name, person_id, priority, due, repeat, done)
+    SEED_DATA = """
+        INSERT INTO chores (name, person_id, priority, due, repeat, done)
         VALUES
-            ("Vacuum",      "4", "3", "7/11/2026", "No repeat", "1"),
-            ("Clean Chickens",  "5", "2", "12/12/2026", "Repeat daily", "0"),
-            ("cook dinner",  "2", "2", "30/3/2026", "Repeat daily", "0")
+            ("Vacuum",         1, 3, "2026-07-11", 0, 1),
+            ("Clean Chickens", 1, 2, "2026-12-12", 0, 0),
+            ("cook dinner",    2, 2, "2026-03-30", 1, 0)
            
     """
 
