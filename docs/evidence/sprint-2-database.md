@@ -37,13 +37,13 @@ I made it much simpler and doable
 
 I am running the data on the terminal
 
-![db ran in terminal](screenshots/terminaldb.png)
+![db with spacing errors](screenshots/terminalspacing.png)
 
 ### Changes / Improvements
 
 I fixed up some spacing issues. 
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![db ran in terminal](screenshots/terminaldb.png)
 
 
 ## Testing FEATURE NAME HERE
@@ -59,10 +59,8 @@ Replace this text with notes any improvements you made as a result of the testin
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## ETC...
-
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint has helped me make my database and improve which collums I need or don't need. 
 

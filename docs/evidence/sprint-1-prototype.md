@@ -103,5 +103,5 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint has moved the project forward by designing the website look properly and giving me a rough idea of how it will look. I wasn't able to test much as my flow and layout are quite simple. 
 

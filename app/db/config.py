@@ -59,7 +59,7 @@ class ChoreTable:
             ("Vacuum",         1, 3, 1),
             ("Clean Chickens", 1, 2, 0),
             ("cook dinner",    2, 2, 0)
-           
+        
     """
 
 
