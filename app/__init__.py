@@ -29,7 +29,7 @@ def show_chores():
         sql = """
             SELECT id, name 
             FROM chores
-            ORDER BY pinned DESC, created DESC
+            ORDER BY name DESC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()
@@ -52,21 +52,50 @@ def show_choresdetails():
         sql = """
             SELECT id, name, person_id, priority, done
             FROM chores
-            ORDER BY pinned DESC, created DESC
+            ORDER BY name DESC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()
 
-        flash("Test message")
-        flash("Test SUCCESS message", "success")
-        flash("Test INFO message", "info")
-        flash("Test WARNING message", "warning")
-        flash("Test ERROR message", "error")
+       # flash("Test message")
+       # flash("Test SUCCESS message", "success")
+        #flash("Test INFO message", "info")
+        #flash("Test WARNING message", "warning")
+        #flash("Test ERROR message", "error")
 
         return render_template("pages/chore_list.jinja", chores=chores)
 
+#-----------------------------------------------------------
+# Form page - make a chore
+#-----------------------------------------------------------
+@app.get("/choreform")
+def show_chore_form():
+    return render_template("pages/chore_form.jinja")
 
+#-----------------------------------------------------------
+# Handel the chore form
+#-----------------------------------------------------------
+@app.post("/choreform/new")
+def process_chore_form():
+    #get form data
+    chores = request.form.get("name", "unknown").strip() #Default value if no chores
+    person_id = request.form.get("person", "unknown").strip()
 
+    #connect to the DB
+    with connect_db() as db:
+        sql = """
+            INSERT INTO chores (name, person_id, priority, done)
+            VALUES (?, ?)
+        """
+        params = (chores, person_id)
+
+        #run qeury
+        db.execute(sql, params)
+
+        flash(f"Chore {name} added successfully")
+
+        #done, return to list
+        return redirect("/")
 #===========================================================
 # Configure the app
 #===========================================================
