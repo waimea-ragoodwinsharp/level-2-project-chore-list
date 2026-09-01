@@ -28,7 +28,7 @@ def show_chores():
     with connect_db() as db:
         sql = """
             SELECT id, name 
-            FROM chore
+            FROM chores
             ORDER BY pinned DESC, created DESC
         """
         params = ()
@@ -51,7 +51,7 @@ def show_choresdetails():
     with connect_db() as db:
         sql = """
             SELECT id, name, person_id, priority, done
-            FROM chore
+            FROM chores
             ORDER BY pinned DESC, created DESC
         """
         params = ()
