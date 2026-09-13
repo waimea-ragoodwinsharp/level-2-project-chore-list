@@ -17,9 +17,9 @@ Continue to develop the web application to the point that it provides all key fu
     - Etc.
 
 
-## Testing FEATURE NAME HERE
+## Testing getting my chores to show
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am running my app over and over to find the errors
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
