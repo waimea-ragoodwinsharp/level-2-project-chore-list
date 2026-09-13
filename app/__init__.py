@@ -78,16 +78,20 @@ def show_chore_form():
 @app.post("/choreform/new")
 def process_chore_form():
     #get form data
-    chores = request.form.get("name", "unknown").strip() #Default value if no chores
+    name = request.form.get("name", "unknown").strip() #Default value if no chores
     person_id = request.form.get("person", "unknown").strip()
+    priority = request.form.get("priority", "unknown").strip()
+    done = request.form.get("done", "unknown").strip()
+
+
 
     #connect to the DB
     with connect_db() as db:
         sql = """
             INSERT INTO chores (name, person_id, priority, done)
-            VALUES (?, ?)
+            VALUES (?, ?, ?, ?)
         """
-        params = (chores, person_id)
+        params = (name, person_id, priority, done)
 
         #run qeury
         db.execute(sql, params)
@@ -96,6 +100,25 @@ def process_chore_form():
 
         #done, return to list
         return redirect("/")
+
+#-----------------------------------------------------------
+# Chore deletion
+#-----------------------------------------------------------
+@app.get("/<int:id>/delete")
+def delete_a_chore(id):
+    with connect_db() as db:
+        ##delete chore using its id
+        sql = """
+            DELETE FROM chores
+            WHERE id=?
+        """
+        params = (id,)
+        db.execute(sql, params)
+
+
+        flash("Chore deleted", "success")
+##back to list
+        return redirect("/")    
 #===========================================================
 # Configure the app
 #===========================================================

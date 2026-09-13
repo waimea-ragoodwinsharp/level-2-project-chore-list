@@ -4,26 +4,37 @@
 
     <h2>Add a chore</h2>
 
-    <form method="post" action="/chore/new">
+    <form method="post" action="/choreform/new">
         <label>
 
 
-            name
+            Name
             <input type="text" name="name" required>
         
         </label>
 
         <label>
 
-            person id number
+            Person id number
             <input type="int" person="person" required>
 
         </label>
          <label>
 
-            priority
+            Priority
             <input type="int" priority="priority" required>
 
         </label>
+
+        <label>
+
+            Done?
+            <input type="int" done="done" required>
+
+        </label>
+
+        <button>Add Chore</button>
         
     </form>
+
+{% endblock %}
