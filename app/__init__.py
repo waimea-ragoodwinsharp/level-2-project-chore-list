@@ -63,7 +63,7 @@ def show_choresdetails():
         #flash("Test WARNING message", "warning")
         #flash("Test ERROR message", "error")
 
-        return render_template("pages/chore_list.jinja", chores=chores)
+        return render_template("pages/choredetail.jinja", chores=chores)
 
 #-----------------------------------------------------------
 # Form page - make a chore
@@ -119,6 +119,24 @@ def delete_a_chore(id):
         flash("Chore deleted", "success")
 ##back to list
         return redirect("/")    
+
+#-----------------------------------------------------------
+# people
+#-----------------------------------------------------------
+@app.get("/people")
+def show_people():
+    with connect_db() as db:
+        sql = """
+            SELECT id, name 
+            FROM persons
+            ORDER BY name DESC
+        """
+        params = ()
+        chores = db.execute(sql, params).fetchall()
+
+
+        return render_template("pages/people.jinja", persons=persons)
+
 #===========================================================
 # Configure the app
 #===========================================================

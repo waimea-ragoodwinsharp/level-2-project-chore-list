@@ -21,22 +21,22 @@ Continue to develop the web application to the point that it provides all key fu
 
 I am running my app over and over to find the errors
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-![Placeholder](screenshots/placeholder.png)
+![terminal error of trying to add a chore ](screenshots/namenodefine.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I fixed up the names and was able to add in a new chore
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![Form and adding works](screenshots/works.png)
+![Form and adding works](screenshots/formworks.png)
 
 
-## Testing FEATURE NAME HERE
+## Testing deleting chores
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am testing to see if deleting a chore will work
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Deleting doesn't work](screenshots/deletnowork.png)
 
 ### Changes / Improvements
 

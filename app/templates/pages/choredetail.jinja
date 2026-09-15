@@ -1,0 +1,28 @@
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Details of Chores</h2>
+
+    <section id="chores">
+
+        {% for chore in chores %}
+
+            
+            <div class="chore">
+            
+                <h3>{{ chore.name }}</h3>
+                <p>Who? <strong>{{ person.name }}</strong></p>
+                <p>Priotity <strong>{{ chore.priority }}</strong></p>
+
+            </div>
+        {% else %}
+
+            <p>No Chores!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}

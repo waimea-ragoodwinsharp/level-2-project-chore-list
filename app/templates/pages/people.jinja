@@ -1,0 +1,29 @@
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>People</h2>
+
+    <section id="persons">
+
+        {% for person in persons %}
+
+            
+            <div class="person">
+                <h3>{{ person.name }}</h3>
+                <p>ID: <strong>{{ person.id }}</strong></p>
+                <p><a href="/person/{{ person.id }}/delete">Delete</a></p>
+ 
+
+            </div>
+
+        {% else %}
+
+            <p>No People!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
