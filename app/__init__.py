@@ -27,9 +27,12 @@ app = Flask(__name__)
 def show_chores():
     with connect_db() as db:
         sql = """
-            SELECT id, name 
+            SELECT chores.name AS chore_name,
+                    persons.name AS person_name    
+
             FROM chores
-            ORDER BY name DESC
+            JOIN chores ON chores.name = persons.chores_name
+            ORDER BY chore_name, person_name DESC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()
@@ -50,9 +53,9 @@ def show_chores():
 def show_choresdetails():
     with connect_db() as db:
         sql = """
-            SELECT id, name, person_id, priority, done
-            FROM chores
-            ORDER BY name DESC
+            SELECT id, chore_name, person_name, priority, done
+            JOIN chores ON chores.name = persons.chores_name
+            ORDER BY chore_name, person_name DESC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()
@@ -75,7 +78,7 @@ def show_chore_form():
 #-----------------------------------------------------------
 # Handel the chore form
 #-----------------------------------------------------------
-@app.post("/choreform/new")
+@app.post("/choreform")
 def process_chore_form():
     #get form data
     name = request.form.get("name", "unknown").strip() #Default value if no chores
@@ -88,10 +91,10 @@ def process_chore_form():
     #connect to the DB
     with connect_db() as db:
         sql = """
-            INSERT INTO chores (name, person_id, priority, done)
+            INSERT INTO chores (name, person_name, priority, done)
             VALUES (?, ?, ?, ?)
         """
-        params = (name, person_id, priority, done)
+        params = (name, person_name, priority, done)
 
         #run qeury
         db.execute(sql, params)
@@ -119,23 +122,6 @@ def delete_a_chore(id):
         flash("Chore deleted", "success")
 ##back to list
         return redirect("/")    
-
-#-----------------------------------------------------------
-# people
-#-----------------------------------------------------------
-@app.get("/people")
-def show_people():
-    with connect_db() as db:
-        sql = """
-            SELECT id, name 
-            FROM persons
-            ORDER BY name DESC
-        """
-        params = ()
-        chores = db.execute(sql, params).fetchall()
-
-
-        return render_template("pages/people.jinja", persons=persons)
 
 #===========================================================
 # Configure the app
