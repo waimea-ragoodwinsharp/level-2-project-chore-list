@@ -45,11 +45,11 @@ Replace this text with notes any improvements you made as a result of the testin
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## Testing FEATURE NAME HERE
+## Testing to get the chores to add via form
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am testing the terminal and app to get the chores to add into the form after getting people names to read. 
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Form and adding dont work anymore](screenshots/chorenamenowork.png)
 
 ### Changes / Improvements
 

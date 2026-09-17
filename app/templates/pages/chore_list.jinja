@@ -15,10 +15,12 @@
 
             
             <div class="chore">
-                <h3>{{ chore.name }}</h3>
+                <h3>{{chore.priority}}</h3>
+                <h3>{{ chore.chore_name }}</h3>
                 {# ASK MR COPLEY ABOUT THISSS HOW DO I GET FOREIGN TABLE INNN#}
-                <p>Person: <strong>{{ person_name }}</strong></p>
-                <p><a href="/chore/{{ chore.id }}/delete">Delete</a></p>
+                <p>Person: <strong>{{ chore.person_name }}</strong></p>
+                <p>Done: <strong>{{ chore.done }}</strong></p>
+                <p><a href="/{{ chore.id }}/delete">Delete</a></p>
  
 
             </div>

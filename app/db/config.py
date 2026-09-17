@@ -23,7 +23,8 @@ class PeopleTable:
 
     SCHEMA = """
         CREATE TABLE persons (
-            name   TEXT PRIMARY KEY NOT NULL
+            id  INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT  NOT NULL
             
         )
     """
@@ -49,15 +50,15 @@ class ChoreTable:
             priority  INTEGER DEFAULT 0,
             done      INTEGER DEFAULT 0,
 
-            FOREIGN KEY(person_name) REFERENCES person(name)
+            FOREIGN KEY(person_id) REFERENCES person(id)
         )
     """
     SEED_DATA = """
-        INSERT INTO chores (name, person.name, priority, done)
+        INSERT INTO chores (name, person_id, priority, done)
         VALUES
-            ("Vacuum",         Rose, 3, 1),
-            ("Clean Chickens", Rose, 2, 0),
-            ("cook dinner",    James, 2, 0)
+            ("Vacuum",         1, 3, 1),
+            ("Clean Chickens", 1, 2, 0),
+            ("cook dinner",    2, 2, 0)
         
     """
 

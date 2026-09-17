@@ -28,11 +28,13 @@ def show_chores():
     with connect_db() as db:
         sql = """
             SELECT chores.name AS chore_name,
-                    persons.name AS person_name    
+                   chores.priority,
+                   chores.done,
+                   persons.name AS person_name    
 
             FROM chores
-            JOIN chores ON chores.name = persons.chores_name
-            ORDER BY chore_name, person_name DESC
+            JOIN persons ON chores.person_id = persons.id
+            ORDER BY chores.priority ASC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()
@@ -91,15 +93,15 @@ def process_chore_form():
     #connect to the DB
     with connect_db() as db:
         sql = """
-            INSERT INTO chores (name, person_name, priority, done)
+            INSERT INTO chores (chore_name, chore.person_name, priority, done)
             VALUES (?, ?, ?, ?)
         """
-        params = (name, person_name, priority, done)
+        params = (chore_name, chore.person_name, priority, done)
 
         #run qeury
         db.execute(sql, params)
 
-        flash(f"Chore {name} added successfully")
+        flash(f"Chore {chore_name} added successfully")
 
         #done, return to list
         return redirect("/")
