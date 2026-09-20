@@ -54,6 +54,10 @@ body > header {
             color: var(--accent-col);
         }
     }
+    .logo {
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
 

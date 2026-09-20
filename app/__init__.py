@@ -73,35 +73,35 @@ def show_choresdetails():
 #-----------------------------------------------------------
 # Form page - make a chore
 #-----------------------------------------------------------
-@app.get("/choreform")
+@app.get("/chore/new")
 def show_chore_form():
     return render_template("pages/chore_form.jinja")
 
 #-----------------------------------------------------------
 # Handel the chore form
 #-----------------------------------------------------------
-@app.post("/choreform")
+@app.post("/chore/new")
 def process_chore_form():
     #get form data
-    name = request.form.get("name", "unknown").strip() #Default value if no chores
+    chores.chore_name = request.form.get("name", "unknown").strip() #Default value if no chores
     person_id = request.form.get("person", "unknown").strip()
     priority = request.form.get("priority", "unknown").strip()
-    done = request.form.get("done", "unknown").strip()
+    chores.done = request.form.get("done", "unknown").strip()
 
 
 
     #connect to the DB
     with connect_db() as db:
         sql = """
-            INSERT INTO chores (chore_name, chore.person_name, priority, done)
+            INSERT INTO chores (chores.chore_name, chore.person_name, priority, done)
             VALUES (?, ?, ?, ?)
         """
-        params = (chore_name, chore.person_name, priority, done)
+        params = (chores.chore_name, chore.person_name, priority, done)
 
         #run qeury
         db.execute(sql, params)
 
-        flash(f"Chore {chore_name} added successfully")
+        flash(f"Chore {chore.chore_name} added successfully")
 
         #done, return to list
         return redirect("/")
@@ -109,7 +109,7 @@ def process_chore_form():
 #-----------------------------------------------------------
 # Chore deletion
 #-----------------------------------------------------------
-@app.get("/<int:id>/delete")
+@app.get("/chore/<int:id>/delete")
 def delete_a_chore(id):
     with connect_db() as db:
         ##delete chore using its id
@@ -124,7 +124,32 @@ def delete_a_chore(id):
         flash("Chore deleted", "success")
 ##back to list
         return redirect("/")    
+#-----------------------------------------------------------
+# check the box 
+#-----------------------------------------------------------
+@app.get("/chore/<int:id>/incomplete")
+def show_box_ticked(id):
+    with connect_db() as db:
+        sql = """
+            UPDATE chores SET complete = 0 WHERE id = ?
+        """
+        params = (id,)
+        db.execute(sql, params)
 
+        return redirect("/")
+#-----------------------------------------------------------
+# uncheck the box 
+#-----------------------------------------------------------
+@app.get("/chore/<int:id>/complete")
+def show_box_unticked(id):
+    with connect_db() as db:
+        sql = """
+            UPDATE chores SET complete = 1 WHERE id = ?
+        """
+        params = (id,)
+        db.execute(sql, params)
+
+        return redirect("/")
 #===========================================================
 # Configure the app
 #===========================================================

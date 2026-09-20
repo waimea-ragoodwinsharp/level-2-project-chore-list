@@ -17,11 +17,19 @@
             <div class="chore">
                 <h3>{{chore.priority}}</h3>
                 <h3>{{ chore.chore_name }}</h3>
-                {# ASK MR COPLEY ABOUT THISSS HOW DO I GET FOREIGN TABLE INNN#}
+                
                 <p>Person: <strong>{{ chore.person_name }}</strong></p>
-                <p>Done: <strong>{{ chore.done }}</strong></p>
-                <p><a href="/{{ chore.id }}/delete">Delete</a></p>
- 
+                {# <p>Done: <strong>{{ chore.done }}</strong></p> #}
+                {% if chore.complete %} 
+                    <a href="/chore/{{ chore.id }}/incomplete">🗹</a> 
+                {% else %} 
+
+                    <a href="/chore/{{ chore.id }}/complete">☐</a> 
+                {% endif %}
+
+                {% if chore %}    
+                    <p><a href="/chore/{{ chore.id }}/delete">Delete</a></p>
+                {% endif%}
 
             </div>
 
@@ -32,6 +40,38 @@
         {% endfor %}
 
     </section>
+
+    <h2>Add a chore</h2>
+
+    <form method="post" action="/choreform">
+        <label>
+
+
+            Name
+            <input type="text" chore.chore_name="name" required>
+        
+        </label>
+
+        <label>
+
+            Person name
+            <input type="text" person_name="person" required>
+
+        </label>
+         <label>
+
+            Priority
+            <input type="int" chore.priority="priority" required>
+
+        </label>
+
+
+
+        <button>Add Chore</button>
+        
+    </form>
+
+</ul>
 
 {% endblock %}
 
