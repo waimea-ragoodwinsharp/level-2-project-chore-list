@@ -51,24 +51,24 @@ def show_chores():
 #-----------------------------------------------------------
 # details page - Show all chores in detail
 #-----------------------------------------------------------
-@app.get("/choredetails")
-def show_choresdetails():
-    with connect_db() as db:
-        sql = """
-            SELECT id, chore_name, person_name, priority, done
-            JOIN chores ON chores.name = persons.chores_name
-            ORDER BY chore_name, person_name DESC
-        """
-        params = ()
-        chores = db.execute(sql, params).fetchall()
+# @app.get("/choredetails")
+# def show_choresdetails():
+#     with connect_db() as db:
+#         sql = """
+#             SELECT id, chores.chore_name, person_name, priority, done
+#             JOIN chores ON chores.name = persons.chores_name
+#             ORDER BY chore_name, person_name DESC
+#         """
+#         params = ()
+#         chores = db.execute(sql, params).fetchall()
 
-       # flash("Test message")
-       # flash("Test SUCCESS message", "success")
-        #flash("Test INFO message", "info")
-        #flash("Test WARNING message", "warning")
-        #flash("Test ERROR message", "error")
+#        # flash("Test message")
+#        # flash("Test SUCCESS message", "success")
+#         #flash("Test INFO message", "info")
+#         #flash("Test WARNING message", "warning")
+#         #flash("Test ERROR message", "error")
 
-        return render_template("pages/choredetail.jinja", chores=chores)
+#         return render_template("pages/choredetail.jinja", chores=chores)
 
 #-----------------------------------------------------------
 # Form page - make a chore
@@ -82,29 +82,31 @@ def show_chore_form():
 #-----------------------------------------------------------
 @app.post("/chore/new")
 def process_chore_form():
-    #get form data
-    chores.chore_name = request.form.get("name", "unknown").strip() #Default value if no chores
-    person_id = request.form.get("person", "unknown").strip()
-    priority = request.form.get("priority", "unknown").strip()
-    chores.done = request.form.get("done", "unknown").strip()
+    with connect_db() as db:  
+
+        chores.chore_name = request.form.get("name", "unknown").strip() #Default value if no chores
+        chores.person_name = request.form.get("person", "unknown").strip()
+        chores.priority = request.form.get("priority", "unknown").strip()
+        chores.done = request.form.get("done", "unknown").strip()
 
 
 
     #connect to the DB
-    with connect_db() as db:
-        sql = """
-            INSERT INTO chores (chores.chore_name, chore.person_name, priority, done)
-            VALUES (?, ?, ?, ?)
-        """
-        params = (chores.chore_name, chore.person_name, priority, done)
+        with connect_db() as db:
+            sql = """
+                
+                INSERT INTO chores (chores.chore_name, chore.person_name, priority, done)
+                VALUES (?, ?, ?, ?)
+            """
+            params = (chores.chore_name, chore.person_name, chores.priority, chores.done)
 
-        #run qeury
-        db.execute(sql, params)
+            #run qeury
+            db.execute(sql, params)
 
-        flash(f"Chore {chore.chore_name} added successfully")
+            flash(f"Chore {chores.chore_name} added successfully")
 
-        #done, return to list
-        return redirect("/")
+            #done, return to list
+            return redirect("/")
 
 #-----------------------------------------------------------
 # Chore deletion
