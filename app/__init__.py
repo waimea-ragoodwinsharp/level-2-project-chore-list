@@ -82,7 +82,7 @@ def show_chore_form():
 #-----------------------------------------------------------
 @app.post("/chore/new")
 def process_chore_form():
-    with connect_db() as db:  
+    with connect_db() as db:
 
         chores.chore_name = request.form.get("name", "unknown").strip() #Default value if no chores
         chores.person_name = request.form.get("person", "unknown").strip()
