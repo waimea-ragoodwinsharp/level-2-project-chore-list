@@ -30,7 +30,8 @@ def show_chores():
             SELECT chores.name AS chore_name,
                    chores.priority,
                    chores.done,
-                   persons.name AS person_name    
+                   persons.name AS person_name, 
+                   persons.id AS person_id
 
             FROM chores
             JOIN persons ON chores.person_id = persons.id
@@ -84,10 +85,10 @@ def show_chore_form():
 def process_chore_form():
     with connect_db() as db:
 
-        chores.chore_name = request.form.get("name", "unknown").strip() #Default value if no chores
-        chores.person_name = request.form.get("person", "unknown").strip()
-        chores.priority = request.form.get("priority", "unknown").strip()
-        chores.done = request.form.get("done", "unknown").strip()
+        name = request.form.get("name", "unknown").strip() #Default value if no chores
+        person_name = request.form.get("person", "unknown").strip()
+        priority = request.form.get("priority", "unknown").strip()
+       
 
 
 
@@ -95,15 +96,15 @@ def process_chore_form():
         with connect_db() as db:
             sql = """
                 
-                INSERT INTO chores (chores.chore_name, chore.person_name, priority, done)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO chores (name, persons_id, priority)
+                VALUES (?, ?, ?)
             """
-            params = (chores.chore_name, chore.person_name, chores.priority, chores.done)
+            params = (name, person_name, priority)
 
             #run qeury
             db.execute(sql, params)
 
-            flash(f"Chore {chores.chore_name} added successfully")
+            flash(f"Chore {name} added successfully")
 
             #done, return to list
             return redirect("/")

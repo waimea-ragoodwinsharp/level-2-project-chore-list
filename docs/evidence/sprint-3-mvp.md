@@ -53,12 +53,20 @@ I am testing the terminal and app to get the chores to add into the form after g
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+![things are reading](screenshots/name,person,prio.png)
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## ETC...
+## Testing to get the chore table to get the form in
+
+I am testing the terminal and app to get the chores to add into the form and in the table
+
+![kinda working?](screenshots/table.png)
+
+### Changes / Improvements
+
+![yeah idek](screenshots/placeholder.png)
 
 
 ## Sprint Review

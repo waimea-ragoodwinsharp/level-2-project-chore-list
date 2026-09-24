@@ -49,16 +49,15 @@ class ChoreTable:
             person_id INTEGER,
             priority  INTEGER DEFAULT 0,
             done      INTEGER DEFAULT 0,
-
             FOREIGN KEY(person_id) REFERENCES person(id)
         )
     """
     SEED_DATA = """
         INSERT INTO chores (name, person_id, priority, done)
         VALUES
-            ("Vacuum",         1, 3, 1),
-            ("Clean Chickens", 1, 2, 0),
-            ("cook dinner",    2, 2, 0)
+            ("Vacuum",         Rose, 3, 1),
+            ("Clean Chickens", James, 2, 0),
+            ("cook dinner",    Jeremy, 2, 0)
         
     """
 

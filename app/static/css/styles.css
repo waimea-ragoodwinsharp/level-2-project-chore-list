@@ -6,10 +6,10 @@
 :root {
     --text-col:         #111;
 
-    --back-col:         #961f1f;
-    --back-col-panel:   #9c0d0d;
+    --back-col:         #f88787;
+    --back-col-panel:   #915858;
 
-    --border-col:       rgb(180, 75, 67);
+    --border-col:       rgb(255, 90, 79);
 
     --accent-col:       rgb(79, 136, 189);
 }
@@ -69,7 +69,31 @@ main > h2 {
     margin-block: 2rem;
 }
 
+#chores {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
 
+    @media (width >= 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width >= 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .chore {
+        padding: 1rem;
+
+        background-color: var(--back-col-dark);
+        border: 2px solid var(--border-col);
+        border-radius: 0.5rem;
+
+        h3 {
+            color: var(--accent-col);
+        }
+    }
+}
 /* Notes --------------------------------------------------*/
 
 #notes {
