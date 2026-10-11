@@ -46,14 +46,14 @@ class ChoreTable:
         CREATE TABLE chores (
             id        INTEGER PRIMARY KEY AUTOINCREMENT,
             name      TEXT NOT NULL,
-            person_id INTEGER,
+            person_id INTEGER FOREIGN KEY,
             priority  INTEGER DEFAULT 0,
             done      INTEGER DEFAULT 0,
-            FOREIGN KEY(person_id) REFERENCES person(id)
+            FOREIGN KEY(person_id) REFERENCES persons(id)
         )
     """
     SEED_DATA = """
-        INSERT INTO chores (name, person_id, priority, done)
+        INSERT INTO chores (name, persons.name, priority, done)
         VALUES
             ("Vacuum",         Rose, 3, 1),
             ("Clean Chickens", James, 2, 0),

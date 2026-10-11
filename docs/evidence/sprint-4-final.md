@@ -16,17 +16,14 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 
 ## Testing FEATURE NAME HERE
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am fixing the delete by adding the chore.id to the SELECT query
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-![Placeholder](screenshots/placeholder.png)
+![delete works ](screenshots/deleteworks.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+the delete works now and I can finally delete my chores. 
 
 
 ## Testing FEATURE NAME HERE

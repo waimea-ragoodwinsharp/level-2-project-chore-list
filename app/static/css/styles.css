@@ -6,10 +6,10 @@
 :root {
     --text-col:         #111;
 
-    --back-col:         #f88787;
+    --back-col:         #c3ffde;
     --back-col-panel:   #915858;
 
-    --border-col:       rgb(255, 90, 79);
+    --border-col:       rgb(243, 92, 175);
 
     --accent-col:       rgb(79, 136, 189);
 }

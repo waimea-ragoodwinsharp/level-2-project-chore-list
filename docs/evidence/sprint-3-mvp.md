@@ -71,5 +71,5 @@ I am testing the terminal and app to get the chores to add into the form and in 
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+The sprint has moved the project by helping me get the adding and deleting roughed out. 
 

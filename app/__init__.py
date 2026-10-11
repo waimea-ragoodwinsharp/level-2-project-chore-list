@@ -28,10 +28,12 @@ def show_chores():
     with connect_db() as db:
         sql = """
             SELECT chores.name AS chore_name,
+                   chores.id,
                    chores.priority,
                    chores.done,
-                   persons.name AS person_name, 
-                   persons.id AS person_id
+                   persons.id AS person_id,
+                   persons.name AS person_name
+                   
 
             FROM chores
             JOIN persons ON chores.person_id = persons.id
@@ -96,7 +98,7 @@ def process_chore_form():
         with connect_db() as db:
             sql = """
                 
-                INSERT INTO chores (name, persons_id, priority)
+                INSERT INTO chores (name, person_name, priority)
                 VALUES (?, ?, ?)
             """
             params = (name, person_name, priority)
@@ -134,7 +136,7 @@ def delete_a_chore(id):
 def show_box_ticked(id):
     with connect_db() as db:
         sql = """
-            UPDATE chores SET complete = 0 WHERE id = ?
+            UPDATE chores SET done = 0 WHERE id = ?
         """
         params = (id,)
         db.execute(sql, params)
@@ -147,7 +149,7 @@ def show_box_ticked(id):
 def show_box_unticked(id):
     with connect_db() as db:
         sql = """
-            UPDATE chores SET complete = 1 WHERE id = ?
+            UPDATE chores SET done = 1 WHERE id = ?
         """
         params = (id,)
         db.execute(sql, params)
