@@ -186,6 +186,16 @@ def show_box_unticked(id):
 #-----------------------------------------------------------
 @app.get("/people")
 def show_person_form():
+    with connect_db() as db:
+        sql = """
+            SELECT persons.id AS person_id,
+                   persons.name AS person_name
+
+            FROM persons
+            
+            ORDER BY name ASC
+                   
+        """
     return render_template("pages/peopleform.jinja")
 
 #-----------------------------------------------------------
@@ -213,6 +223,25 @@ def process_person_form():
 
             #done, return to list
             return redirect("/peopleform")
+
+#-----------------------------------------------------------
+# person deletion
+#-----------------------------------------------------------
+@app.get("/people/<int:id>/delete")
+def delete_a_person(id):
+    with connect_db() as db:
+        ##delete person using its id
+        sql = """
+            DELETE FROM persons
+            WHERE id=?
+        """
+        params = (id,)
+        db.execute(sql, params)
+
+
+        flash("Person deleted", "success")
+##back to list
+        return redirect("/people")  
 #===========================================================
 # Configure the app
 #===========================================================

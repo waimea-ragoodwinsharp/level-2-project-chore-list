@@ -14,7 +14,7 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 - Perform final, full-system testing
 
 
-## Testing FEATURE NAME HERE
+## Testing deletion
 
 I am fixing the delete by adding the chore.id to the SELECT query
 
@@ -26,17 +26,17 @@ I am fixing the delete by adding the chore.id to the SELECT query
 the delete works now and I can finally delete my chores. 
 
 
-## Testing FEATURE NAME HERE
+## Testing adding chores
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am testing to make my form work 
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![delete works ](screenshots/connectwdb.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I deleted a repeat in the code that was stopping the form from working, and now it works. The repeat was a with connect_db. I deleted the unnessecary one.  
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![delete works ](screenshots/dishes.png)
 
 
 ## Testing FEATURE NAME HERE
