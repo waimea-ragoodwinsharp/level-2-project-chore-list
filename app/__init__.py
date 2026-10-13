@@ -50,31 +50,6 @@ def show_chores():
 
         return render_template("pages/chore_list.jinja", chores=chores)
 
-#-----------------------------------------------------------
-# Home page - Show all chores
-#-----------------------------------------------------------
-@app.get("/people")
-def show_people():
-    with connect_db() as db:
-        sql = """
-            SELECT persons.id AS person_id,
-                   persons.name AS person_name
-
-            FROM chores
-            JOIN persons ON chores.person_id = persons.id
-            ORDER BY chores.priority ASC
-                   
-        """
-        params = ()
-        persons = db.execute(sql, params).fetchall()
-
-        flash("Test message")
-        flash("Test SUCCESS message", "success")
-        flash("Test INFO message", "info")
-        flash("Test WARNING message", "warning")
-        flash("Test ERROR message", "error")
-
-        return render_template("pages/peopleform.jinja", persons=persons)
 
 #-----------------------------------------------------------
 # details page - Show all chores in detail
@@ -180,22 +155,37 @@ def show_box_unticked(id):
         db.execute(sql, params)
 
         return redirect("/")
+#-----------------------------------------------------------
+# people page - Show all people
+#-----------------------------------------------------------
+@app.get("/people")
+def show_people():
+    with connect_db() as db:
+        sql = """
+            SELECT persons.id AS person_id,
+                   persons.name AS person_name
+
+            FROM chores
+            JOIN persons ON chores.person_id = persons.id
+            ORDER BY persons.id ASC
+                   
+        """
+        params = ()
+        persons = db.execute(sql, params).fetchall()
+
+        flash("Test message")
+        flash("Test SUCCESS message", "success")
+        flash("Test INFO message", "info")
+        flash("Test WARNING message", "warning")
+        flash("Test ERROR message", "error")
+
+        return render_template("pages/peopleform.jinja", persons=persons)
 
 #-----------------------------------------------------------
 # Form page - make a PERSON
 #-----------------------------------------------------------
 @app.get("/people")
 def show_person_form():
-    with connect_db() as db:
-        sql = """
-            SELECT persons.id AS person_id,
-                   persons.name AS person_name
-
-            FROM persons
-            
-            ORDER BY name ASC
-                   
-        """
     return render_template("pages/peopleform.jinja")
 
 #-----------------------------------------------------------
@@ -203,6 +193,18 @@ def show_person_form():
 #-----------------------------------------------------------
 @app.post("/people")
 def process_person_form():
+    with connect_db() as db:
+        sql = """
+            SELECT persons.id AS person_id,
+                   persons.name AS person_name
+
+            FROM chores
+            JOIN persons ON chores.person_id = persons.id
+            ORDER BY persons.id ASC
+                   
+        """
+        params = ()
+        persons = db.execute(sql, params).fetchall()
 
         person_name = request.form.get("name", "unknown").strip() #Default value if no chores
         
@@ -219,7 +221,7 @@ def process_person_form():
             #run qeury
             db.execute(sql, params)
 
-            flash(f"{person_name} added successfully")
+            flash(f"{name} added successfully")
 
             #done, return to list
             return redirect("/peopleform")
