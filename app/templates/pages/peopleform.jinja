@@ -1,0 +1,51 @@
+{% extends 'pages/_base.jinja' %}
+
+{% block content %}   
+
+ <h2>People</h2>
+
+    <section id="persons">
+
+        {% for person in persons %}
+
+            
+            <div class="person">
+                <h3>{{ person.person_id }}</h3>
+                <h3>{{ person.person_name }}</h3>
+                
+                
+            
+            </div>
+
+        {% else %}
+
+            <p>No people!</p>
+
+        {% endfor %}
+
+    </section>
+
+    
+    
+
+    <h2>Add a person</h2>
+
+    <form method="post" action="/people">
+        <label>
+
+
+
+        <label>
+
+            Person name
+            <input type="text" name="name" required>
+
+        </label>
+
+
+
+
+        <button>Add person</button>
+        
+    </form>
+    {% endblock %}

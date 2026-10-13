@@ -50,6 +50,31 @@ def show_chores():
 
         return render_template("pages/chore_list.jinja", chores=chores)
 
+#-----------------------------------------------------------
+# Home page - Show all chores
+#-----------------------------------------------------------
+@app.get("/people")
+def show_people():
+    with connect_db() as db:
+        sql = """
+            SELECT persons.id AS person_id,
+                   persons.name AS person_name
+
+            FROM chores
+            JOIN persons ON chores.person_id = persons.id
+            ORDER BY chores.priority ASC
+                   
+        """
+        params = ()
+        persons = db.execute(sql, params).fetchall()
+
+        flash("Test message")
+        flash("Test SUCCESS message", "success")
+        flash("Test INFO message", "info")
+        flash("Test WARNING message", "warning")
+        flash("Test ERROR message", "error")
+
+        return render_template("pages/peopleform.jinja", persons=persons)
 
 #-----------------------------------------------------------
 # details page - Show all chores in detail
@@ -85,10 +110,10 @@ def show_chore_form():
 #-----------------------------------------------------------
 @app.post("/chore/new")
 def process_chore_form():
-    with connect_db() as db:
+
 
         name = request.form.get("name", "unknown").strip() #Default value if no chores
-        person_name = request.form.get("person", "unknown").strip()
+        person_id = request.form.get("person", "unknown").strip()
         priority = request.form.get("priority", "unknown").strip()
        
 
@@ -98,10 +123,10 @@ def process_chore_form():
         with connect_db() as db:
             sql = """
                 
-                INSERT INTO chores (name, person_name, priority)
+                INSERT INTO chores (name, person_id, priority)
                 VALUES (?, ?, ?)
             """
-            params = (name, person_name, priority)
+            params = (name, person_id, priority)
 
             #run qeury
             db.execute(sql, params)
@@ -155,6 +180,39 @@ def show_box_unticked(id):
         db.execute(sql, params)
 
         return redirect("/")
+
+#-----------------------------------------------------------
+# Form page - make a PERSON
+#-----------------------------------------------------------
+@app.get("/people")
+def show_person_form():
+    return render_template("pages/peopleform.jinja")
+
+#-----------------------------------------------------------
+# Handel the chore form
+#-----------------------------------------------------------
+@app.post("/people")
+def process_person_form():
+
+        person_name = request.form.get("name", "unknown").strip() #Default value if no chores
+        
+
+    #connect to the DB
+        with connect_db() as db:
+            sql = """
+                
+                INSERT INTO persons (person_name)
+                VALUES (?)
+            """
+            params = (person_name)
+
+            #run qeury
+            db.execute(sql, params)
+
+            flash(f"{person_name} added successfully")
+
+            #done, return to list
+            return redirect("/peopleform")
 #===========================================================
 # Configure the app
 #===========================================================
