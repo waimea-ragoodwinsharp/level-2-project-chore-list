@@ -21,10 +21,10 @@
                 <p>Person: <strong>{{ chore.person_name }}</strong></p>
                 {# <p>Done: <strong>{{ chore.done }}</strong></p> #}
                 {% if chore.complete %} 
-                    <a href="/chore/{{ chore.id }}/incomplete">🗹</a> 
+                    <a href="/chore/{{ chore.id }}/complete">🗹</a> 
                 {% else %} 
 
-                    <a href="/chore/{{ chore.id }}/complete">☐</a> 
+                    <a href="/chore/{{ chore.id }}/incomplete">☐</a> 
                 {% endif %}
 
                 {% if chore %}    

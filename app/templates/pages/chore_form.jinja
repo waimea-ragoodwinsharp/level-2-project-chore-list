@@ -9,22 +9,25 @@
 
 
             Name
-            <input type="text" name="name" required>
+            <input type="text" name="name" placeholder="e.g. Pick up cats" required>
         
         </label>
 
         <label>
 
-            Person id
-            <input type="int" name="person" required>
+            Person
+            <select name="person">
+                {% for person in persons %}
+                    <option value="{{ person.id }}">{{ person.name }}</option>
+                {% endfor %}
+            </select>
             
-
         </label>
 
         <label>
 
             Priority
-            <input type="int" name="priority" required>
+            <input type="number" name="priority" min="1" max="5" value="3" required>
 
         </label>
 

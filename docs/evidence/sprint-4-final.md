@@ -39,20 +39,31 @@ I deleted a repeat in the code that was stopping the form from working, and now 
 ![delete works ](screenshots/dishes.png)
 
 
-## Testing FEATURE NAME HERE
+## Testing to make people adding work
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I am testing to add people to my form
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I fixed the proccessing and now my form adds people
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![people form works ](screenshots/peopleworks.png)
 
 
-## ETC...
+## making a drop down selection
+
+I am making he chore form easier to add a name to it. 
+
+
+
+### Changes / Improvements
+
+I fwas able to make the people names and the priority a selection
+
+![new form ](screenshots/newform.png)
+
 
 
 ## Sprint Review

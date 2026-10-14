@@ -42,12 +42,6 @@ def show_chores():
         params = ()
         chores = db.execute(sql, params).fetchall()
 
-        flash("Test message")
-        flash("Test SUCCESS message", "success")
-        flash("Test INFO message", "info")
-        flash("Test WARNING message", "warning")
-        flash("Test ERROR message", "error")
-
         return render_template("pages/chore_list.jinja", chores=chores)
 
 
@@ -78,7 +72,17 @@ def show_chores():
 #-----------------------------------------------------------
 @app.get("/chore/new")
 def show_chore_form():
-    return render_template("pages/chore_form.jinja")
+    with connect_db() as db:
+        sql = """
+            SELECT id, name
+            FROM persons
+            ORDER BY name ASC
+                   
+        """
+        params = ()
+        persons = db.execute(sql, params).fetchall()
+
+        return render_template("pages/chore_form.jinja", persons=persons)
 
 #-----------------------------------------------------------
 # Handel the chore form
@@ -133,7 +137,7 @@ def delete_a_chore(id):
 # check the box 
 #-----------------------------------------------------------
 @app.get("/chore/<int:id>/incomplete")
-def show_box_ticked(id):
+def show_box_unticked(id):
     with connect_db() as db:
         sql = """
             UPDATE chores SET done = 0 WHERE id = ?
@@ -146,7 +150,7 @@ def show_box_ticked(id):
 # uncheck the box 
 #-----------------------------------------------------------
 @app.get("/chore/<int:id>/complete")
-def show_box_unticked(id):
+def show_box_ticked(id):
     with connect_db() as db:
         sql = """
             UPDATE chores SET done = 1 WHERE id = ?
@@ -162,22 +166,13 @@ def show_box_unticked(id):
 def show_people():
     with connect_db() as db:
         sql = """
-            SELECT persons.id AS person_id,
-                   persons.name AS person_name
-
-            FROM chores
-            JOIN persons ON chores.person_id = persons.id
-            ORDER BY persons.id ASC
+            SELECT id, name
+            FROM persons
+            ORDER BY name ASC
                    
         """
         params = ()
         persons = db.execute(sql, params).fetchall()
-
-        flash("Test message")
-        flash("Test SUCCESS message", "success")
-        flash("Test INFO message", "info")
-        flash("Test WARNING message", "warning")
-        flash("Test ERROR message", "error")
 
         return render_template("pages/peopleform.jinja", persons=persons)
 
@@ -193,38 +188,28 @@ def show_person_form():
 #-----------------------------------------------------------
 @app.post("/people")
 def process_person_form():
-    with connect_db() as db:
-        sql = """
-            SELECT persons.id AS person_id,
-                   persons.name AS person_name
-
-            FROM chores
-            JOIN persons ON chores.person_id = persons.id
-            ORDER BY persons.id ASC
-                   
-        """
-        params = ()
-        persons = db.execute(sql, params).fetchall()
+   with connect_db() as db:
+        
 
         person_name = request.form.get("name", "unknown").strip() #Default value if no chores
         
 
     #connect to the DB
-        with connect_db() as db:
-            sql = """
-                
-                INSERT INTO persons (person_name)
-                VALUES (?)
-            """
-            params = (person_name)
+    
+        sql = """
+            
+            INSERT INTO persons (name)
+            VALUES ( ? )
+        """
+        params = (person_name,)
 
-            #run qeury
-            db.execute(sql, params)
+        #run qeury
+        db.execute(sql, params)
 
-            flash(f"{name} added successfully")
+        flash(f"{person_name} added successfully")
 
-            #done, return to list
-            return redirect("/peopleform")
+        #done, return to list
+        return redirect("/people")
 
 #-----------------------------------------------------------
 # person deletion

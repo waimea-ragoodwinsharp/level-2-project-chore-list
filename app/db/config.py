@@ -47,8 +47,8 @@ class ChoreTable:
             id        INTEGER PRIMARY KEY AUTOINCREMENT,
             name      TEXT NOT NULL,
             person_id INTEGER FOREIGN KEY,
-            priority  INTEGER DEFAULT 0,
-            done      INTEGER DEFAULT 0,
+            priority  INTEGER DEFAULT 3,
+            done      INTEGER NOT NULL DEFAULT 0,
             FOREIGN KEY(person_id) REFERENCES persons(id)
         )
     """

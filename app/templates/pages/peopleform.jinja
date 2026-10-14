@@ -10,8 +10,7 @@
 
             
             <div class="person">
-                <h3>{{ person.person_id }}</h3>
-                <h3>{{ person.person_name }}</h3>
+                <h3>{{ person.name }}</h3>
                 {% if person %}    
                     <p><a href="/people/{{ person.id }}/delete">Delete</a></p>
                 {% endif %}
