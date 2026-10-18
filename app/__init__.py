@@ -134,7 +134,7 @@ def delete_a_chore(id):
 ##back to list
         return redirect("/")    
 #-----------------------------------------------------------
-# check the box 
+# uncheck the box 
 #-----------------------------------------------------------
 @app.get("/chore/<int:id>/incomplete")
 def show_box_unticked(id):
@@ -147,7 +147,7 @@ def show_box_unticked(id):
 
         return redirect("/")
 #-----------------------------------------------------------
-# uncheck the box 
+# check the box 
 #-----------------------------------------------------------
 @app.get("/chore/<int:id>/complete")
 def show_box_ticked(id):

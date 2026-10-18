@@ -19,16 +19,16 @@
                 <h3>{{ chore.chore_name }}</h3>
                 
                 <p>Person: <strong>{{ chore.person_name }}</strong></p>
-                {# <p>Done: <strong>{{ chore.done }}</strong></p> #}
-                {% if chore.complete %} 
-                    <a href="/chore/{{ chore.id }}/complete">🗹</a> 
+                
+                {% if chore.done %} 
+                    <a class="done-toggle" href="/chore/{{ chore.id }}/incomplete">🗹</a> 
                 {% else %} 
 
-                    <a href="/chore/{{ chore.id }}/incomplete">☐</a> 
+                    <a class="done-toggle" href="/chore/{{ chore.id }}/complete">☐</a> 
                 {% endif %}
 
                 {% if chore %}    
-                    <p><a href="/chore/{{ chore.id }}/delete">Delete</a></p>
+                    <p><a class="delete-toggle" onclick="return confirm('Are you sure you want to delete this?')" href="/chore/{{ chore.id }}/delete"> <img src="/static/images/trashbin.png" alt="bin Icon" class="delete"></a></p>
                 {% endif %}
 
             </div>

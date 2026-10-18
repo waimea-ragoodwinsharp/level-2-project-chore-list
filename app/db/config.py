@@ -55,7 +55,7 @@ class ChoreTable:
     SEED_DATA = """
         INSERT INTO chores (name, persons.name, priority, done)
         VALUES
-            ("Vacuum",         Rose, 3, 1),
+            ("Vacuum",         Rose, 3, 0),
             ("Clean Chickens", James, 2, 0),
             ("cook dinner",    Jeremy, 2, 0)
         
