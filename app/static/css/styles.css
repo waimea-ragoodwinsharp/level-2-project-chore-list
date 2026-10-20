@@ -8,6 +8,7 @@
 
     --back-col:         #c3ffde;
     --back-col-panel:   #915858;
+    --back-col-task:    #90ffc2;
 
     --border-col:       rgb(243, 92, 175);
 
@@ -91,10 +92,11 @@ main > h2 {
 
 }
 #chores {
-    display: grid;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     grid-template-columns: 1fr;
-
+    max-width: 50rem;
     @media (width >= 500px) {
         grid-template-columns: 1fr 1fr;
     }
@@ -105,13 +107,30 @@ main > h2 {
 
     .chore {
         padding: 1rem;
-
-        background-color: var(--back-col-dark);
+        display: flex;
+        flex-direction: row;
+        background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
         border-radius: 0.5rem;
+        width: 90%;
+        margin: auto;
+        justify-content: left;
+        gap: 1rem;
+        align-items: center;
+        /* text-indent: 15px; */
+        
 
         h3 {
             color: var(--accent-col);
+            flex: 1;
+        }
+
+        p.priority {
+            font-size: 2em;
+        }
+
+        p.person {
+            color: red;
         }
 
         a.done-toggle {
@@ -121,15 +140,22 @@ main > h2 {
 
         a.delete-toggle {
             text-decoration: none;
+            
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+
+        &.done {
+            opacity: 0.5;
         }
 
     }
-
-    .delete {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
 }
+
+
 #persons {
 
     

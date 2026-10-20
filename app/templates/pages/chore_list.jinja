@@ -14,11 +14,12 @@
         {% for chore in chores %}
 
             
-            <div class="chore">
-                <h3>Priority: {{ chore.priority }}</h3>
+            <div class="chore  {% if chore.done %}done{% endif %}">
+                <p class="priority">{{ chore.priority }}</p>
+                
                 <h3>{{ chore.chore_name }}</h3>
                 
-                <p>Person: <strong>{{ chore.person_name }}</strong></p>
+                <p class="person">{{ chore.person_name }}</p>
                 
                 {% if chore.done %} 
                     <a class="done-toggle" href="/chore/{{ chore.id }}/incomplete">🗹</a> 
@@ -28,7 +29,7 @@
                 {% endif %}
 
                 {% if chore %}    
-                    <p><a class="delete-toggle" onclick="return confirm('Are you sure you want to delete this?')" href="/chore/{{ chore.id }}/delete"> <img src="/static/images/trashbin.png" alt="bin Icon" class="delete"></a></p>
+                    <a class="delete-toggle" onclick="return confirm('Are you sure you want to delete this?')" href="/chore/{{ chore.id }}/delete"> <img src="/static/images/trashbin.png" alt="bin Icon" class="delete"></a>
                 {% endif %}
 
             </div>

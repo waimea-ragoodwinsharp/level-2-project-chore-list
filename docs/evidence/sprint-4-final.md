@@ -57,16 +57,26 @@ I fixed the proccessing and now my form adds people
 I am making he chore form easier to add a name to it. 
 
 
+### Changes / Improvements
+
+I was able to make the people names and the priority a selection
+
+![new form ](screenshots/newform.png)
+
+
+## Fixing the done box
+
+I am making the check boxes work
 
 ### Changes / Improvements
 
-I fwas able to make the people names and the priority a selection
+I fixed the boxes by switching the complete and imcomplete 
 
-![new form ](screenshots/newform.png)
+![ boxes checked and uncheched ](screenshots/boxeswork.png)
 
 
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+I got the base of the code done and am now onto the styling. 
 

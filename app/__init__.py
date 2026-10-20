@@ -37,7 +37,7 @@ def show_chores():
 
             FROM chores
             JOIN persons ON chores.person_id = persons.id
-            ORDER BY chores.priority ASC
+            ORDER BY chores.done ASC, chores.priority ASC
         """
         params = ()
         chores = db.execute(sql, params).fetchall()

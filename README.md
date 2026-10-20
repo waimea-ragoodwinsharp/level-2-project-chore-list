@@ -4,14 +4,15 @@ by Rose Goodwin-Sharp
 
 ## Project Description
 
-This is an app that ...
+This is an app that holds a list of chores and people to assign to said chores.
 
 The app has the following key features:
-- Feature one
-- Feature two
-- Feature three
-- ...
+- Able to add chores and people
+- Ability to delete chores. 
 
+## Live Site
+
+https://level-2-project-chore-list.onrender.com
 
 ## Supporting Documents
 
@@ -25,20 +26,6 @@ Project Evidence
 - [Sprint 3: Final System Development](docs/evidence/sprint-3-final.md)
 - [Review: Project Final Review](docs/evidence/system-review.md)
 
-
-## Test Accounts
-
-The following user accounts have been created to demonstrate the features of the system:
-
-Test User 1:
-- Username: xxxxx
-- Password: xxxxx
-
-Test User 2:
-- Username: xxxxx
-- Password: xxxxx
-
-...
 
 
 ## Technologies Used
