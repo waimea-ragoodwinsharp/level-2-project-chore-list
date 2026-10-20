@@ -6,13 +6,15 @@
 :root {
     --text-col:         #111;
 
-    --back-col:         #c3ffde;
+    --back-col:         #a089d8;
     --back-col-panel:   #915858;
-    --back-col-task:    #90ffc2;
+    --back-col-task:    rgb(225, 203, 255);
 
-    --border-col:       rgb(243, 92, 175);
+    --border-col:       rgb(238, 207, 166);
 
-    --accent-col:       rgb(79, 136, 189);
+    --accent-col:       rgb(103, 88, 170);
+
+    --linkcolor:        rgb(114, 62, 98);
 }
 
 
@@ -28,6 +30,8 @@ html {
 
 body {
     min-height: 100dvh;
+    
+    
 }
 
 
@@ -46,6 +50,9 @@ body > header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background-image: url('images/indigo.png');
+    background-size: cover;
+    background-position: center;
 
     nav {
         display: flex;
@@ -62,7 +69,7 @@ body > header {
 }
 
 a:link {
-    color: rgb(241, 116, 204);
+    color:  rgb(114, 62, 98);
   }
 
 a:hover {
@@ -70,7 +77,7 @@ a:hover {
   }
 
 a:visited{
-    color: rgb(241, 116, 204);
+    color:  rgb(90, 50, 78);
 }
 /* Page Headings -----------------------------------------------*/
 
@@ -87,8 +94,15 @@ main > h2 {
     padding: 1rem;
     font-size: 21.5px;
 }
+
+
 #choreform {
+    background-color: var(--back-col-task);
+    border: 2px solid var(--border-col);
+    border-radius: 0.5rem;
+    justify-content: center;
     padding: 1rem;
+    font-size: 20px;
 
 }
 #chores {
@@ -130,7 +144,8 @@ main > h2 {
         }
 
         p.person {
-            color: red;
+            color: rgb(151, 110, 189);
+            font-weight: bold;
         }
 
         a.done-toggle {
@@ -155,6 +170,29 @@ main > h2 {
     }
 }
 
+#navlinks {
+    text-decoration: none;
+    font-weight: bold;
+    
+    .peoplelink {
+        background-color: var(--back-col-task);
+        border: 2px solid var(--border-col);
+        border-radius: 0.5rem;
+       
+    }
+
+    .alllink{
+        background-color: var(--back-col-task);
+        border: 2px solid var(--border-col);
+        border-radius: 0.5rem;
+    }
+
+    .newlink {
+        background-color: var(--back-col-task);
+        border: 2px solid var(--border-col);
+        border-radius: 0.5rem;
+    }
+}
 
 #persons {
 
@@ -176,7 +214,7 @@ main > h2 {
 
         padding: 1rem;
 
-        background-color: var(--back-col-dark);
+        background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
         border-radius: 0.5rem;
 

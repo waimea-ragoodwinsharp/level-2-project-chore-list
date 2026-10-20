@@ -28,13 +28,18 @@
         <a href="/">
             <img src="/static/images/sweep.png" alt="cleaning Icon" class="logo">
         </a>
-
+    <section id="navlinks">
         <nav>
-            <a href="/people">People</a>
-            <a href="/">All chores</a>
-            {# <a href="/choredetails">Details</a> #}
-            <a href="/chore/new">Add a Chore</a>
-
+            <div class="peoplelink">
+                <a href="/people">People</a>
+            </div>
+            <div class="alllink">
+                <a href="/">All chores</a>
+            </div>
+            <div class="newlink">
+                <a href="/chore/new">Add a Chore</a>
+            </div>
+    </section>
             
             
 
@@ -50,6 +55,8 @@
         {% endblock %}
 
     </main>
+
+    
 
 </body>
 
