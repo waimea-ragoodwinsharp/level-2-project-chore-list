@@ -50,7 +50,7 @@ body > header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-image: url('images/indigo.png');
+    background-image: ('app/static/images/indigo.png');
     background-size: cover;
     background-position: center;
 
@@ -94,7 +94,17 @@ main > h2 {
     padding: 1rem;
     font-size: 21.5px;
 }
+.peopleform {
+    
+    background-color: var(--back-col-task);
+    border: 2px solid var(--border-col);
+    border-radius: 0.5rem;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 20px;
+    
 
+}
 
 #choreform {
     background-color: var(--back-col-task);
@@ -174,22 +184,28 @@ main > h2 {
     text-decoration: none;
     font-weight: bold;
     
+    
     .peoplelink {
         background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
         border-radius: 0.5rem;
-       
+        padding: 0.5rem;
+        border-radius: 0.5rem;
     }
 
     .alllink{
         background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
         border-radius: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
     }
 
     .newlink {
         background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
         border-radius: 0.5rem;
     }
 }
@@ -217,6 +233,7 @@ main > h2 {
         background-color: var(--back-col-task);
         border: 2px solid var(--border-col);
         border-radius: 0.5rem;
+        
 
         h3 {
             color: var(--accent-col);

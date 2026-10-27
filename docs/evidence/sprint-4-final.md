@@ -74,9 +74,14 @@ I fixed the boxes by switching the complete and imcomplete
 
 ![ boxes checked and uncheched ](screenshots/boxeswork.png)
 
+## Styling
+This is my semi-final styling 
 
+![ chores page ](screenshots/chorespage.png)
+![ people page ](screenshots/peoplepage.png)
+![ chore form page ](screenshots/choreform.png)
 
 ## Sprint Review
 
-I got the base of the code done and am now onto the styling. 
+ This sprint has finished the coding off in the project and finalized the styling for my app. 
 
