@@ -75,11 +75,12 @@ I fixed the boxes by switching the complete and imcomplete
 ![ boxes checked and uncheched ](screenshots/boxeswork.png)
 
 ## Styling
-This is my semi-final styling 
+This is my final styling 
 
 ![ chores page ](screenshots/chorespage.png)
 ![ people page ](screenshots/peoplepage.png)
 ![ chore form page ](screenshots/choreform.png)
+![ show one chore done ](screenshots/translucent.png)
 
 ## Sprint Review
 

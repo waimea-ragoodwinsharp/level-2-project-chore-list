@@ -1,4 +1,4 @@
-# chore list Project
+# Chore List Project
 
 by Rose Goodwin-Sharp
 
@@ -9,6 +9,7 @@ This is an app that holds a list of chores and people to assign to said chores.
 The app has the following key features:
 - Able to add chores and people
 - Ability to delete chores. 
+- Priority of the chores from most important to least important. 
 
 ## Live Site
 
