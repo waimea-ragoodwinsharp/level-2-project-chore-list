@@ -238,6 +238,15 @@ main > h2 {
         h3 {
             color: var(--accent-col);
         }
+
+        a.delete-toggle {
+            text-decoration: none;
+            
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
     }
 
 }
