@@ -17,6 +17,10 @@ https://level-2-project-chore-list.onrender.com
 
 ## Supporting Documents
 
+
+*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-ragoodwinsharp.github.io/level-2-project-chore-list/)*
+
+
 Task Instructions:
 - [Instruction documents](docs/instructions/)
 
@@ -38,7 +42,7 @@ Project Evidence
 - [Jinja2](https://jinja.palletsprojects.com/templates/) for page templating
 
 
-*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-ragoodwinsharp.github.io/level-2-project-chore-list/)*
+
 
 
 ## Project Structure
