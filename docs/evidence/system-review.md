@@ -4,27 +4,27 @@
 
 ### Usability
 
-During the project, I considered how someone might make a mistake on the website. I added a notification to ask if the user wants to delete the chore to make sure they don't accidentally delete something they dont want to delete.
+During the project, I considered how someone might make a mistake on the website. I added a notification to ask if the user wants to delete the chore or person to make sure they don't accidentally delete something they dont want to delete.
 
 
 ### Aesthetics
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+I kept the colour all cohesive by using complimentary colours in a more muted version. I also kept the website to the recognised design of navigation at the top, content in the middle, logo top-left, etc. 
 
 
 ### Functionality
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+I made sure that all of the links and buttons worked as they should, and had my end-user test out the website to double check for me, and she confirmed that they all work. 
 
 
 ### Future Proofing
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+I realized that not much had to be future proofed, however I made sure that my website was simple enough that more could be added if need be. 
 
 
 ### End User
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+My end user said that the website would need to be easily readable at a glance, so I put everything in a bubble that was lighter than the text itself. I also got her to have a play around with the website and everything met her needs. 
 
 
 ## Overall Review
